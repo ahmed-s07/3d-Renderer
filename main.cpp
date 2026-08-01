@@ -23,14 +23,8 @@ int main() {
         WIDTH, HEIGHT
     );
 
-    // your framebuffer -- exactly like a 2D pixel array you'd have in pygame
     std::vector<uint32_t> pixels(WIDTH * HEIGHT, 0x000000FF);
 
-    // your put_pixel function
-    auto put_pixel = [&](int x, int y, uint32_t color) {
-        if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) return;
-        pixels[y * WIDTH + x] = color;
-    };
 
     bool running = true;
     SDL_Event event;
